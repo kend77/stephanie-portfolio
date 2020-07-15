@@ -199,8 +199,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: #9fa1a2;
+  font-family: "baskerville";
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -208,6 +208,10 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+body a {
+  color: #9fa1a2;
 }
 img {
   max-width: 100%;
@@ -619,4 +623,15 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.content {
+  height: 10vw;
+  border: solid 2px#9FA1A2;
+  margin: 2em 0;
+}
+
+.layout {
+  padding: 2em;
+  font-size: 1.25em;
 }
