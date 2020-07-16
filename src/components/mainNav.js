@@ -1,10 +1,9 @@
 import { Link, useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
 import "./mainNav.css"
 
-const MainNav = () => {
+function MainNav() {
   const data = useStaticQuery(graphql`
     query NavItemsQuery {
       dataJson {
@@ -21,7 +20,11 @@ const MainNav = () => {
       <nav>
         <ul className="mainNav">
           {navItems.map(proj => (
-            <Link className="mainNav__link" key={proj.name} to={proj.slug}>
+            <Link
+              className="mainNav__link"
+              key={proj.name}
+              to={`/${proj.slug}`}
+            >
               <li>{proj.name}</li>
             </Link>
           ))}
