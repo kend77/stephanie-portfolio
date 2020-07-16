@@ -16,6 +16,10 @@
   grid-template-columns: 50% 50%;
 }
 
+.header__nav a {
+  text-decoration: none;
+}
+
 .header__link:hover {
   color: #1d252c;
   cursor: pointer;

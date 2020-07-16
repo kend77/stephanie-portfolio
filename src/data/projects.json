@@ -1,0 +1,9 @@
+{
+  "data": [
+    { "name": "F. Schumacher & Co.", "slug": "schumacher" },
+    { "name": "The Authentics", "slug": "authentics" },
+    { "name": "Architectural Digest", "slug": "ad" },
+    { "name": "Self", "slug": "self" },
+    { "name": "Downtown", "slug": "downtown" }
+  ]
+}
