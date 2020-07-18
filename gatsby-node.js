@@ -10,17 +10,19 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const { data } = await graphql(`
-    query dataJsonQuery {
-      dataJson {
-        data {
-          name
-          slug
+    query DataJSONQuery {
+      allDataJson(filter: { data: { elemMatch: { slug: { eq: "ad" } } } }) {
+        nodes {
+          data {
+            name
+            slug
+          }
         }
       }
     }
   `)
 
-  data.dataJson.data.forEach(({ slug, name }) => {
+  data.allDataJson.nodes[0].data.forEach(({ slug, name }) => {
     createPage({
       path: slug,
       component: path.resolve("src/templates/image-page.js"),

@@ -1,9 +1,9 @@
 {
   "data": [
     { "name": "F. Schumacher & Co.", "slug": "schumacher" },
+    { "name": "S Is For Style", "slug": "s-for-style" },
     { "name": "The Authentics", "slug": "authentics" },
     { "name": "Architectural Digest", "slug": "ad" },
-    { "name": "Self", "slug": "self" },
-    { "name": "Downtown", "slug": "downtown" }
+    { "name": "Self", "slug": "self" }
   ]
 }

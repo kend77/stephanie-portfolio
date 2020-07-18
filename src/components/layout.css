@@ -626,12 +626,13 @@ pre tt:after {
 }
 
 .content {
-  height: 10vw;
   border: solid 2px#9FA1A2;
-  margin: 2em 0;
+  margin: 3em 0;
 }
 
 .layout {
   padding: 2em;
   font-size: 1.25em;
+  width: 80%;
+  margin: auto;
 }

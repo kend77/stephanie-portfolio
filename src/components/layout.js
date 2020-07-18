@@ -18,15 +18,8 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          width: "65%",
-        }}
-      >
-        <main className="content">{children}</main>
-        <MainNav />
-      </div>
+      <main className="content">{children}</main>
+      <MainNav />
     </div>
   )
 }

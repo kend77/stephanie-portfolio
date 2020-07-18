@@ -1,0 +1,39 @@
+.aboutme {
+  display: grid;
+  grid-template-columns: 10% 30% 50% 10%;
+  grid-template-areas: ". picture description .";
+  min-height: 20em;
+  align-items: center;
+}
+
+.aboutme__header {
+  font-size: 2em;
+}
+
+.aboutme__description {
+  grid-area: description;
+  font-size: 0.9em;
+  line-height: 1.25em;
+  padding: 2em;
+}
+
+.aboutme__header {
+  margin-bottom: 0.75em;
+}
+
+.aboutme__contactme {
+  width: 1.5em;
+}
+
+.aboutme a {
+  cursor: pointer;
+}
+
+.aboutme__blurb {
+  margin-bottom: 1em;
+}
+
+.aboutme__pic {
+  grid-area: picture;
+  padding: 2em;
+}
