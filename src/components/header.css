@@ -1,9 +1,15 @@
 .header {
-  width: 90%;
   margin: auto;
-  display: grid;
+  background-color: white;
+  display: flex;
   grid-template-columns: 85% 15%;
-  height: 1em;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  padding: 2em 10em 0 10em;
+  margin: auto;
+  width: 100%;
+  top: 0;
 }
 
 .header__logo {
@@ -15,15 +21,17 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 10em;
 }
 
 .header__nav a {
   text-decoration: none;
 }
 
-.header__link:hover {
+.header__link:hover,
+.header__link.active {
   color: #1d252c;
-  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 600px) {

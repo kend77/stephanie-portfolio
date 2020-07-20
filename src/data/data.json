@@ -1,0 +1,19 @@
+{
+  "aboutme": {
+    "name": "Stephanie Diaz",
+    "networks": {
+      "linkedin": "https://www.linkedin.com/in/stephanie-diaz-382ab561/"
+    }
+  },
+  "projects": [
+    {
+      "name": "F. Schumacher & Co.",
+      "slug": "schumacher",
+      "subProjects": [{ "name": "Something Else", "slug": "somethingelse" }]
+    },
+    { "name": "S Is For Style", "slug": "s-for-style" },
+    { "name": "The Authentics", "slug": "authentics" },
+    { "name": "Architectural Digest", "slug": "ad" },
+    { "name": "Self", "slug": "self" }
+  ]
+}

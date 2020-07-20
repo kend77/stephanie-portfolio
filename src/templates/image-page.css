@@ -1,22 +1,51 @@
 .carousel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.image-container {
-  background-color: lightskyblue;
-  border: solid lightgray 5px;
-  height: 10em;
-  width: 10em;
-  margin: 0.5em;
 }
 
-@media only screen and (max-width: 600px) {
-  .image-container {
-    background-color: lightskyblue;
-    border: solid lightgray 5px;
-    height: 10em;
-    width: 80%;
-    margin: 0.5em;
-  }
+.carousel__image {
+  grid-area: image;
+  margin: auto;
 }
+
+.carousel__button {
+  width: 100%;
+  display: flex;
+}
+
+.carousel__left {
+  justify-content: flex-end;
+}
+
+.carousel__right {
+  justify-content: flex-start;
+}
+
+.arrowLeft {
+  color: white;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  left: 30%;
+  margin: 0;
+}
+
+.arrowRight {
+  color: white;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  right: 30%;
+  margin: 0;
+}
+
+/* .carousel__right {
+  grid-area: right;
+} */

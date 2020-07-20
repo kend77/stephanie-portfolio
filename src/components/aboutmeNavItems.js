@@ -9,10 +9,10 @@ AboutMeNavItems.propTypes = {
 function AboutMeNavItems({ className }) {
   return (
     <>
-      <Link to="/work" className={className}>
+      <Link to="/work" className={className} activeClassName="active">
         <li>Work</li>
       </Link>
-      <Link to="/about" className={className}>
+      <Link to="/about" className={className} activeClassName="active">
         <li>About</li>
       </Link>
     </>

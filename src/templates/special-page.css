@@ -1,0 +1,22 @@
+.expose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.image-container {
+  background-color: lightskyblue;
+  border: solid lightgray 5px;
+  height: 10em;
+  width: 10em;
+  margin: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .image-container {
+    background-color: lightskyblue;
+    border: solid lightgray 5px;
+    height: 10em;
+    width: 80%;
+    margin: 0.5em;
+  }
+}

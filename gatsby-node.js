@@ -9,11 +9,13 @@ const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const { data } = await graphql(`
+  const { data, errors } = await graphql(`
     query DataJSONQuery {
-      allDataJson(filter: { data: { elemMatch: { slug: { eq: "ad" } } } }) {
-        nodes {
-          data {
+      dataJson {
+        projects {
+          name
+          slug
+          subProjects {
             name
             slug
           }
@@ -21,15 +23,40 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  if (errors) {
+    throw errors
+  }
 
-  data.allDataJson.nodes[0].data.forEach(({ slug, name }) => {
-    createPage({
-      path: slug,
-      component: path.resolve("src/templates/image-page.js"),
-      context: {
-        slug,
-        name,
-      },
-    })
+  data.dataJson.projects.forEach(({ slug, name, subProjects }) => {
+    if (subProjects) {
+      createPage({
+        path: slug,
+        component: path.resolve("src/templates/special-page.js"),
+        context: {
+          slug,
+          name,
+        },
+      })
+
+      subProjects.forEach(({ slug, name }) => {
+        createPage({
+          path: slug,
+          component: path.resolve("src/templates/image-page.js"),
+          context: {
+            slug,
+            name,
+          },
+        })
+      })
+    } else {
+      createPage({
+        path: slug,
+        component: path.resolve("src/templates/image-page.js"),
+        context: {
+          slug,
+          name,
+        },
+      })
+    }
   })
 }

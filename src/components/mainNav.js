@@ -24,17 +24,15 @@ function MainNav() {
 
   const data = useStaticQuery(graphql`
     query NavItemsQuery {
-      allDataJson(filter: { data: { elemMatch: { slug: { eq: "ad" } } } }) {
-        nodes {
-          data {
-            name
-            slug
-          }
+      dataJson {
+        projects {
+          name
+          slug
         }
       }
     }
   `)
-  const navItems = data.allDataJson.nodes[0].data
+  const navItems = data.dataJson.projects
   return (
     <>
       {showButton && <Hamburger onClick={() => setShowMenu(l => !l)} />}
@@ -45,6 +43,7 @@ function MainNav() {
               <Link
                 className="mainNav__link"
                 key={proj.name}
+                activeClassName="active"
                 to={`/${proj.slug}`}
               >
                 <li>{proj.name}</li>

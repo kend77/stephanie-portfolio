@@ -626,8 +626,7 @@ pre tt:after {
 }
 
 .content {
-  border: solid 2px#9FA1A2;
-  margin: 3em 0;
+  margin: 5em 0;
 }
 
 .layout {

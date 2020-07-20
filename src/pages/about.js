@@ -9,7 +9,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 function About() {
-  const data = useStaticQuery(graphql`
+  const {
+    placeholderImage,
+    aboutMeData,
+    aboutMeImage,
+  } = useStaticQuery(graphql`
     query AboutMeData {
       placeholderImage: file(relativePath: { eq: "linkedin.png" }) {
         childImageSharp {
@@ -18,15 +22,11 @@ function About() {
           }
         }
       }
-      aboutMe: allDataJson(
-        filter: { about: { name: { eq: "Stephanie Diaz" } } }
-      ) {
-        nodes {
-          about {
-            name
-            networks {
-              linkedin
-            }
+      aboutMeData: dataJson {
+        aboutme {
+          name
+          networks {
+            linkedin
           }
         }
       }
@@ -45,7 +45,7 @@ function About() {
       <SEO title="Home" />
       <div className="aboutme">
         <div className="aboutme__pic">
-          <Image fluid={data.aboutMeImage.childImageSharp.fluid} />
+          <Image fluid={aboutMeImage.childImageSharp.fluid} />
         </div>
         <div className="aboutme__description">
           <div className="aboutme__header">About me</div>
@@ -65,8 +65,8 @@ function About() {
             himenaeos.
           </div>
           <div className="aboutme__contactme">
-            <a href={data.aboutMe.nodes[0].about.networks.linkedin}>
-              <Image fluid={data.placeholderImage.childImageSharp.fluid} />
+            <a href={aboutMeData.aboutme.networks.linkedin}>
+              <Image fluid={placeholderImage.childImageSharp.fluid} />
             </a>
           </div>
         </div>
