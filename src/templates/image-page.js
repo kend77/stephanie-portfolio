@@ -45,7 +45,7 @@ function ImagePage({ pageContext, data }) {
             </div>
             <div className="carousel__image">
               <Img
-                fixed={images[currentItem].childImageSharp.fixed}
+                fluid={images[currentItem].childImageSharp.fluid}
                 style={{ display: "block" }}
               />
             </div>
@@ -68,8 +68,8 @@ export const query = graphql`
         id
         name
         childImageSharp {
-          fixed(width: 700, height: 600) {
-            ...GatsbyImageSharpFixed
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

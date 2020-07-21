@@ -1,9 +1,7 @@
 .aboutme {
-  display: grid;
-  grid-template-columns: 10% 30% 50% 10%;
-  grid-template-areas: ". picture description .";
-  min-height: 20em;
-  align-items: center;
+  display: flex;
+  width: 80%;
+  margin: 5em auto;
 }
 
 .aboutme__header {
@@ -11,10 +9,13 @@
 }
 
 .aboutme__description {
-  grid-area: description;
   font-size: 0.9em;
   line-height: 1.25em;
   padding: 2em;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aboutme__header {
@@ -22,11 +23,9 @@
 }
 
 .aboutme__contactme {
-  width: 1.5em;
-}
-
-.aboutme a {
-  cursor: pointer;
+  display: flex;
+  width: 30%;
+  justify-content: flex-start;
 }
 
 .aboutme__blurb {
@@ -34,6 +33,32 @@
 }
 
 .aboutme__pic {
-  grid-area: picture;
-  padding: 2em;
+  padding: 2em 4em;
+  width: 50%;
+  margin: auto;
+}
+
+.aboutme__link {
+  margin-right: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutme {
+    flex-direction: column;
+  }
+
+  .aboutme__pic {
+    padding: 2em 0;
+    width: 100%;
+  }
+  .aboutme__description {
+    width: 100%;
+    padding: 1em 0.5em 3em 0.5em;
+    text-align: center;
+  }
+
+  .aboutme__contactme {
+    width: 100%;
+    justify-content: center;
+  }
 }

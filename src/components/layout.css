@@ -7,6 +7,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #dddddd;
 }
 article,
 aside,
@@ -200,6 +201,7 @@ html {
 }
 body {
   color: #9fa1a2;
+  background-color: #ededed;
   font-family: "baskerville";
   font-weight: normal;
   word-wrap: break-word;
@@ -626,12 +628,12 @@ pre tt:after {
 }
 
 .content {
-  margin: 5em 0;
+  height: 100vh;
 }
 
 .layout {
-  padding: 2em;
   font-size: 1.25em;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  height: 100vh;
 }

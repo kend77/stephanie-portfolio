@@ -1,14 +1,19 @@
+.container {
+  height: 100%;
+}
+
 .carousel {
   display: flex;
+  height: 100%;
 }
 
 .carousel__image {
-  grid-area: image;
   margin: auto;
+  width: 60%;
 }
 
 .carousel__button {
-  width: 100%;
+  width: 30%;
   display: flex;
 }
 
@@ -46,6 +51,22 @@
   margin: 0;
 }
 
-/* .carousel__right {
-  grid-area: right;
-} */
+@media only screen and (max-width: 600px) {
+  .carousel__button {
+    width: 10%;
+    display: flex;
+  }
+
+  .carousel__image {
+    margin: auto;
+    width: 80%;
+  }
+
+  .arrowLeft {
+    left: 50%;
+  }
+
+  .arrowRight {
+    right: 50%;
+  }
+}

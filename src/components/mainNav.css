@@ -6,7 +6,7 @@
   left: 0;
   padding: 1em 4em;
   min-height: 3em;
-  height: 8em;
+  height: 6em;
 }
 
 .mainNav__items {
@@ -26,6 +26,10 @@
 .mainNav__link:hover {
   color: #1d252c;
   text-decoration: underline;
+}
+
+.mainNav__link.active:hover {
+  color: #9fa1a2;
 }
 
 @media only screen and (max-width: 600px) {

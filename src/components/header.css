@@ -2,14 +2,13 @@
   margin: auto;
   background-color: white;
   display: flex;
-  grid-template-columns: 85% 15%;
   justify-content: space-between;
   position: fixed;
   left: 0;
   padding: 2em 10em 0 10em;
-  margin: auto;
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 
 .header__logo {
@@ -34,8 +33,16 @@
   text-decoration: underline;
 }
 
+.header__link.active:hover {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 600px) {
   .header__logo {
     width: 250px;
+  }
+
+  .header {
+    padding: 1.25em 4.5em;
   }
 }
