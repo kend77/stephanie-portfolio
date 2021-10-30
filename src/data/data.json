@@ -10,7 +10,11 @@
     {
       "name": "F. Schumacher & Co.",
       "slug": "schumacher",
-      "subProjects": [{ "name": "Something Else", "slug": "somethingelse" }]
+      "subProjects": [
+        { "name": "Project 1", "slug": "project1" },
+        { "name": "Project 2", "slug": "project2" },
+        { "name": "Project 3", "slug": "project3" }
+      ]
     },
     { "name": "S Is For Style", "slug": "s-for-style" },
     { "name": "The Authentics", "slug": "authentics" },

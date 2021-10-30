@@ -20,44 +20,55 @@ function ImagePage({ pageContext, data }) {
   const [currentItem, setCurrentItem] = useState(0)
   const images = data.allFile.nodes
 
-  const goForward = () => {
-    setCurrentItem(prev => {
-      return (prev + 1) % images.length
-    })
-  }
+  const goForward = () => setCurrentItem(prev => (prev + 1) % images.length)
 
-  const goBack = () => {
-    setCurrentItem(prev => {
-      return (prev - 1 + images.length) % images.length
-    })
-  }
+  const goBack = () =>
+    setCurrentItem(prev => (prev - 1 + images.length) % images.length)
 
   return (
     <Layout>
       <SEO title={pageContext.name} />
-      {images.length ? (
+      {images.length && (
         <div className="container">
           <div className="carousel">
             <div className="carousel__button carousel__left">
-              <div className="arrowLeft" onClick={goBack}>
+              <div className="arrow arrow__left" onClick={goBack}>
                 &lt;
               </div>
             </div>
-            <div className="carousel__image">
-              <Img
-                fluid={images[currentItem].childImageSharp.fluid}
-                style={{ display: "block" }}
+            {images.map((image, idx) => (
+              <CarouselImage
+                key={image.id}
+                active={currentItem === idx}
+                image={image}
               />
-            </div>
+            ))}
             <div className="carousel__button carousel__right">
-              <div className="arrowRight" onClick={goForward}>
+              <div className="arrow arrow__right" onClick={goForward}>
                 &gt;
               </div>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </Layout>
+  )
+}
+
+CarouselImage.propTypes = {
+  active: PropTypes.bool,
+  image: PropTypes.object.isRequired,
+}
+
+CarouselImage.defaultProps = {
+  active: false,
+}
+
+function CarouselImage({ active, image }) {
+  return (
+    <div className={`carousel__image ${active ? "active" : ""}`}>
+      <Img fluid={image.childImageSharp.fluid} />
+    </div>
   )
 }
 

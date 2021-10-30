@@ -8,6 +8,11 @@
 }
 
 .carousel__image {
+  display: none;
+}
+
+.carousel__image.active {
+  display: block;
   margin: auto;
   width: 60%;
 }
@@ -25,7 +30,7 @@
   justify-content: flex-start;
 }
 
-.arrowLeft {
+.arrow {
   color: white;
   height: 100%;
   width: 30%;
@@ -34,21 +39,15 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  left: 30%;
   margin: 0;
 }
 
-.arrowRight {
-  color: white;
-  height: 100%;
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+.arrow__left {
+  left: 30%;
+}
+
+.arrow__right {
   right: 30%;
-  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {
